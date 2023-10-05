@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="nav-links">
+            <a href="">File</a>
+            <a href="">Home</a>
+            <a href="">Insert</a>
+            <a href="">Layout</a>
+            <a href="">Help</a>
+        </div>
+        <div class="nav-icons">
+            <select oninput="changeFont(this)" id="selectFont">
+                <option selected value="arial">Arial</option>
+                <option value="TimesNewRoman">Times New Roman</option>
+                <option value="monospace">Monospace</option>
+                <option value="sans-serif">Sans-serif</option>
+                <option value="fantasy">Fantasy</option>
+            </select>
+            <select oninput="changeFontSize(this)" id="selectFontSize">
+                <option value="13">13</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+                <option value="22">22</option>
+                <option value="24">24</option>
+            </select>
+            <span id="boldButton" onclick="toggleBold(this)" class="material-icons">
+                format_bold
+            </span>
+            <span id="italicButton" onclick="toggleItalic(this)" class="material-icons">
+                format_italic
+            </span>
+            <span id="underlineButton" onclick="toggleUnderline(this)" class="material-icons">
+                format_underlined
+            </span>
+            <label for="textColor"><span class="material-icons">
+                    format_color_text
+                </span></label>
+            <input id="textColor" oninput="textColorChange(this)" type="color" style="display: none;">
+            <label for="bgColor"><span class="material-icons">
+                    format_color_fill
+                </span></label>
+            <input id="bgColor" oninput="bgColorChange(this)" type="color" style="display: none;">
+            <div class="material-icons selected text-align" data-value="left" onclick="onClickTextAlign(this)">
+                format_align_left
+            </div>
+            <div class="material-icons text-align" data-value="right" onclick="onClickTextAlign(this)">
+                format_align_right
+            </div>
+            <div class="material-icons text-align" data-value="center" onclick="onClickTextAlign(this)">
+                format_align_center
+            </div>
+        </div>
+        <div class="info">
+            <p id="active-cell-name" style="width: 5rem;display: block;height: 1.5rem;text-align: center;"></p>
+        </div>
+    </header>
+    <main>
+        <div id="header">
+            <b id="blank"></b>
+        </div>
+        <section id="body"></section>
+    </main>
+    <script src="options.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
